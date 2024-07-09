@@ -20,3 +20,7 @@ We can also add songs in a queue which are stored in a queue data structure.
 8. Recent songs: Gives complete list os songs that the user has played.
 9. Songs in queue: Gives complete list of songs that have been added to queue by the user.
 10. End: In order to exit the menu.
+
+## Output Snippets
+
+![Output Example](Screenshot 2024-07-09 234618.png)
