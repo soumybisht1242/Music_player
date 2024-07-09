@@ -23,4 +23,17 @@ We can also add songs in a queue which are stored in a queue data structure.
 
 ## Output Snippets
 
+1. Add a song: 
 ![Output Example of the menu drop down system](Menu_output.png)
+
+2. Count number of songs
+![Output Example of the menu drop down system](count_songs.png)
+
+3. Print all the songs 
+![Output Example of the menu drop down system](print_songs.png)
+
+4. Start playing a song
+![Output Example of the menu drop down system](play_songs.png)
+
+5. Play the next song
+![Output Example of the menu drop down system](next_song.png)
