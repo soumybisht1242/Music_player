@@ -23,4 +23,4 @@ We can also add songs in a queue which are stored in a queue data structure.
 
 ## Output Snippets
 
-![Output Example](Screenshot 2024-07-09 234618.png)
+![Output Example of the menu drop down system](Menu_output.png)
