@@ -33,7 +33,7 @@ We can also add songs in a queue which are stored in a queue data structure.
 ![Output Example of the menu drop down system](print_songs.png)
 
 4. Start playing a song
-![Output Example of the menu drop down system](play_songs.png)
+![Output Example of the menu drop down system](play_song.png)
 
 5. Play the next song
 ![Output Example of the menu drop down system](next_song.png)
