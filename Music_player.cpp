@@ -135,7 +135,7 @@ void play(SongNode* start){
     if(start==NULL) cout<<"Please add songs into the playlist first.";
     else{
         cout<<"Now playing: "<<start->song<<"\n";
-        cout<<"🎵🎶.....\n";
+        cout<<".....\n";
     }
 }
 
