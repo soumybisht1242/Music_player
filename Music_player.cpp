@@ -29,13 +29,23 @@ void add_song(SongNode*& last){
     cout<<"Song added to playlist successfully.\n";
 }
 
+void count_songs(SongNode* start, int& c){
+    int cnt=0;
+    while(start){
+        start=start->next;
+        cnt++;
+    }
+    cout<<"The number of songs are: "<<cnt<<endl;
+    c=cnt;
+}
+
 void del_song(SongNode*& start, SongNode*& last){
     cout<<"Please choose one of the two options:\n1. Delete by song number \n2. Delete by song name\n";
     int choice;
     cin>>choice;
     if(choice==1){
         int n, cnt;
-        cnt=count_songs(start);
+        count_songs(start,cnt);
         cout<<"Enter song number\n";
         cin>>n;
         if(n>cnt){
@@ -43,7 +53,7 @@ void del_song(SongNode*& start, SongNode*& last){
             cout<<"1. Reenter song number\n2. Exit";
             int x;
             cin>>x;
-            if(x==1) del_song(start);
+            if(x==1) del_song(start,last);
             else return;
         }
         int i=1;
@@ -89,7 +99,7 @@ void del_song(SongNode*& start, SongNode*& last){
                 cout<<"1. Reenter song number\n2. Exit";
                 int x;
                 cin>>x;
-                if(x==1) del_song(start);
+                if(x==1) del_song(start,last);
                 else return;
             }
             else{
@@ -99,15 +109,6 @@ void del_song(SongNode*& start, SongNode*& last){
             }
         }
     }
-}
-
-void count_songs(SongNode* start){
-    int cnt=0;
-    while(start){
-        start=start->next;
-        cnt++;
-    }
-    cout<<"The number of songs are: "<<cnt<<endl;
 }
 
 void printlist(SongNode* start){
@@ -166,7 +167,7 @@ void recent_songs(){
         return;
     }
     cout<<"You have listened to following songs recently:\n";
-    stac<string> r=stk;
+    stack<string> r=stk;
     while(!r.empty()){
         cout<<r.top()<<"\n";
         r.pop();
@@ -190,20 +191,26 @@ void qsongs(){
 int main(){
     SongNode* start=NULL, *tail=NULL;
     while(true){
-        cout<<"Choose one option: \n1.Add a song\n2. Delete a song\n3. Count number of songs in queue\n4. Print all the song\n5. Exit\n";
-        int choice;
+        cout<<"Choose one option: \n1.Add a song\n2. Delete a song\n3. Count number of songs in queue\n4. Print all the song\n5. Start playing song\n6. Skip to next song\n7. Add a song to queue\n8. View recently played songs\n9. View songs in queue\n10. Exit\n";
+        int choice, temp;
         cin>>choice;
         if(choice==1) {
             add_song(tail);
             if(start==NULL) start=tail;
         }
-        else if(choice==2) del_song(start);
-        else if(choice==3) count_songs(start);
+        else if(choice==2) del_song(start, tail);
+        else if(choice==3) count_songs(start,temp);
         else if(choice==4) printlist(start);
-        else if(choice==5){
+        else if(choice==5) play(start);
+        else if(choice==6) next_song(start);
+        else if(choice==7) addto_q();
+        else if(choice==8) recent_songs();
+        else if(choice==9) qsongs();
+        else if(choice==10){
             end_node();
             break;
         }
+       
     }
     return 0;
 }
